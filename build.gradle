@@ -1,0 +1,54 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.1.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    implementation "ch.qos.logback:logback-classic:1.1.7"
+    implementation "org.slf4j:slf4j-api:1.7.21"
+
+    runtimeOnly 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
+
+
+//    implementation 'org.springframework.boot:spring-boot-starter-security'
+//    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+//    runtimeOnly 'com.h2database:h2'
+
+//    implementation 'org.springframework.security:spring-security-oauth2-jose'
+
+//    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+//        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+//    }
+}
+//<dependency>
+//	<groupId>org.springframework.boot</groupId>
+//	<artifactId>spring-boot-starter-security</artifactId>
+//</dependency>
+//<dependency>
+//	<groupId>org.springframework.security.oauth.boot</groupId>
+//	<artifactId>spring-security-oauth2-autoconfigure</artifactId>
+//	<version>2.0.0.RELEASE</version>
+//</dependency>
+test {
+    useJUnitPlatform()
+}

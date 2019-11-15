@@ -1,0 +1,26 @@
+### CREATE 1
+POST {{host}}/create
+Content-Type: application/json
+
+{
+  "id": "1",
+  "name": "user_1",
+  "salary": "101"
+}
+
+### CREATE 2
+POST {{host}}/create
+Content-Type: application/json
+
+{
+  "id": "2",
+  "name": "user_2",
+  "salary": "200"
+}
+
+###
+### CREATE 1
+GET {{host}}/
+Content-Type: application/json
+
+###
